@@ -4,9 +4,13 @@ from app.models.serie_model import Serie
 
 
 def get_series():
-    Serie.read_series()
-    return jsonify({'msg': 'obter series'}), HTTPStatus.OK
+    return Serie.read_series()
 
-def create():
-    data = request.get_json()
-    return jsonify({'msg': 'criar series'}), HTTPStatus.CREATED
+def create(new_serie_data):
+    return Serie.create(new_serie_data)
+
+def get_specific_serie(serie_id):
+    return Serie.read_specific_serie(serie_id)
+
+def create_table():
+    return Serie.create_table()
