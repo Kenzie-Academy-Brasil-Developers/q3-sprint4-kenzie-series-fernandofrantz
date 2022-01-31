@@ -63,10 +63,10 @@ class Serie:
         conn.commit()
 
         values = (
-            new_serie_data['serie'],
+            new_serie_data['serie'].title(),
             new_serie_data['seasons'],
             new_serie_data['released_date'],
-            new_serie_data['genre'],
+            new_serie_data['genre'].title(),
             new_serie_data['imdb_rating']
             )
 
